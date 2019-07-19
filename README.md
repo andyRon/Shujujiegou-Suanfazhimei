@@ -5,9 +5,9 @@
 
 ## 说明
 
-本项目是学习极客时间的[数据结构与算法之美-王争](https://time.geekbang.org/column/intro/126)的笔记。
+本项目是学习极客时间的付费课程[《数据结构与算法之美》](https://time.geekbang.org/column/intro/126)的笔记。
 
-
+作者的示例代码是C/C++，
 
 ## 介绍
 
