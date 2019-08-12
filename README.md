@@ -5,9 +5,13 @@
 
 ## 说明
 
-本项目是学习极客时间的付费课程[《数据结构与算法之美》](https://time.geekbang.org/column/intro/126)的笔记。
+本项目是学习极客时间的付费专栏[《数据结构与算法之美》](https://time.geekbang.org/column/intro/126)的笔记。
 
-作者的示例代码是C/C++，
+作者文中的示例代码多是C/C++。
+
+这个专栏的优点就是把数据结构、算法联系到实际应用中，而不是干巴巴的学算法。
+
+专栏的相关的代码在作者的GitHub[wangzheng0822/algo](https://github.com/wangzheng0822/algo)，除了C/C++代码外，还有很多网友提交的其它语言算法示例，比如Go、Java、PHP、Python、JavaScript等。
 
 ## 介绍
 
@@ -41,4 +45,4 @@
 
 
 
-![](images/SJJG+SFZM-0.jpg)
+![](Article/images/SJJG+SFZM-0.jpg)
