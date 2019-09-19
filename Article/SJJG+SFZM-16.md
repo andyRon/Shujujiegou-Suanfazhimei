@@ -2,7 +2,7 @@
 
 通过 IP 地址来查找 IP 归属地的功能，不知道你有没有用过？没用过也没关系，你现在可以打开百度，在搜索框里随便输一个 IP 地址，就会看到它的归属地。
 
-![img](https://static001.geekbang.org/resource/image/c4/0a/c497770eca94fdf3baf4f813bafcb20a.jpg)
+![](./images/SJJG+SFZM-16-03.jpg)
 
 这个功能并不复杂，它是通过维护一个很大的 IP 地址库来实现的。地址库中包括 IP 地址范围和归属地的对应关系。
 

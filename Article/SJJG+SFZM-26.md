@@ -29,7 +29,7 @@
 
 我们下面的平衡调整中，会一直用到这两个操作，所以我这里画了个示意图，帮助你彻底理解这两个操作。图中的 a，b，r 表示子树，可以为空。
 
-![img](https://static001.geekbang.org/resource/image/0e/1e/0e37e597737012593a93105ebbf4591e.jpg)
+![](./images/SJJG+SFZM-26-01.jpg)
 
 前面我说了，红黑树的插入、删除操作会破坏红黑树的定义，具体来说就是会破坏红黑树的平衡，所以，我们现在就来看下，红黑树在插入、删除数据之后，如何调整平衡，继续当一棵合格的红黑树的。
 
@@ -59,7 +59,7 @@
 - 关注节点变成 a 的祖父节点 c；
 - 跳到 CASE 2 或者 CASE 3。
 
-![img](https://static001.geekbang.org/resource/image/60/40/603cf91f54b5db21bd02c6c5678ecf40.jpg)
+![](./images/SJJG+SFZM-26-02.jpg)
 
 **CASE 2：如果关注节点是 a，它的叔叔节点 d 是黑色，关注节点 a 是其父节点 b 的右子节点**，我们就依次执行下面的操作：
 
@@ -67,7 +67,7 @@
 - 围绕新的关注节点b 左旋；
 - 跳到 CASE 3。
 
-![img](https://static001.geekbang.org/resource/image/44/ad/4480a314f9d83c343b8adbb28b6782ad.jpg)
+![](./images/SJJG+SFZM-26-03.jpg)
 
 **CASE 3：如果关注节点是 a，它的叔叔节点 d 是黑色，关注节点 a 是其父节点 b 的左子节点**，我们就依次执行下面的操作：
 
@@ -75,7 +75,7 @@
 - 将关注节点 a 的父节点 b、兄弟节点 c 的颜色互换。
 - 调整结束。
 
-![img](https://static001.geekbang.org/resource/image/04/12/04650d9470b1e67899f5b8b7b8e33212.jpg)
+![](./images/SJJG+SFZM-26-04.jpg)
 
 ### 删除操作的平衡调整
 
@@ -95,7 +95,7 @@
 - 节点 a 只能是黑色，节点 b 也只能是红色，其他情况均不符合红黑树的定义。这种情况下，我们把节点 b 改为黑色；
 - 调整结束，不需要进行二次调整。
 
-![img](https://static001.geekbang.org/resource/image/a6/c3/a6c4c347b7cbdf57662bab399ed36cc3.jpg)
+![](./images/SJJG+SFZM-26-05.jpg)
 
 **CASE 2：如果要删除的节点 a 有两个非空子节点，并且它的后继节点就是节点 a 的右子节点 c。**我们就依次进行下面的操作：
 
@@ -104,7 +104,7 @@
 - 如果节点 c 是黑色，为了不违反红黑树的最后一条定义，我们给节点 c 的右子节点 d 多加一个黑色，这个时候节点 d 就成了“红 - 黑”或者“黑 - 黑”；
 - 这个时候，关注节点变成了节点 d，第二步的调整操作就会针对关注节点来做。
 
-![img](https://static001.geekbang.org/resource/image/48/4e/48e3bd2cdd66cb635f8a4df8fb8fd64e.jpg)
+![](./images/SJJG+SFZM-26-07.jpg)
 
 **CASE 3：如果要删除的是节点 a，它有两个非空子节点，并且节点 a 的后继节点不是右子节点**，我们就依次进行下面的操作：
 
@@ -114,7 +114,7 @@
 - 如果节点 d 是黑色，为了不违反红黑树的最后一条定义，我们给节点 d 的右子节点 c 多加一个黑色，这个时候节点 c 就成了“红 - 黑”或者“黑 - 黑”；
 - 这个时候，关注节点变成了节点 c，第二步的调整操作就会针对关注节点来做。
 
-![img](https://static001.geekbang.org/resource/image/b9/29/b93c1fa4de16aee5482424ddf49f3c29.jpg)
+![](./images/SJJG+SFZM-26-06.jpg)
 
 
 #### 2. 针对关注节点进行二次调整
@@ -128,7 +128,7 @@
 - 关注节点不变；
 - 继续从四种情况中选择适合的规则来调整。
 
-![img](https://static001.geekbang.org/resource/image/ac/91/ac76d78c064a2486e2a5b4c4903acb91.jpg)
+![](./images/SJJG+SFZM-26-08.jpg)
 
 **CASE 2：如果关注节点是 a，它的兄弟节点 c 是黑色的，并且节点 c 的左右子节点 d、e 都是黑色的**，我们就依次进行下面的操作：
 
@@ -138,7 +138,7 @@
 - 关注节点从 a 变成其父节点 b；
 - 继续从四种情况中选择符合的规则来调整。
 
-![img](https://static001.geekbang.org/resource/image/ec/ec/eca118d673c607eb2b103f3476fb24ec.jpg)
+![](./images/SJJG+SFZM-26-09.jpg)
 
 **CASE 3：如果关注节点是 a，它的兄弟节点 c 是黑色，c 的左子节点 d 是红色，c 的右子节点 e 是黑色**，我们就依次进行下面的操作：
 
@@ -147,7 +147,7 @@
 - 关注节点不变；
 - 跳转到 CASE 4，继续调整。
 
-![img](https://static001.geekbang.org/resource/image/44/af/44075213100edd70315e1492422c92af.jpg)
+![](./images/SJJG+SFZM-26-10.jpg)
 
 **CASE 4：如果关注节点 a 的兄弟节点 c 是黑色的，并且 c 的右子节点是红色的**，我们就依次进行下面的操作：
 
@@ -158,7 +158,7 @@
 - 将关注节点 a 的叔叔节点 e 设置为黑色；
 - 调整结束。
 
-![img](https://static001.geekbang.org/resource/image/5f/44/5f73f61bf77a7f2bb75f168cf432ec44.jpg)
+![](./images/SJJG+SFZM-26-11.jpg)
 
 ### 解答开篇
 
@@ -168,17 +168,17 @@
 
 还是有点不好理解，我通过一个例子来解释一下。假设红黑树的定义中不包含刚刚提到的那一条“叶子节点必须是黑色的空节点”，我们往一棵红黑树中插入一个数据，新插入节点的父节点也是红色的，两个红色的节点相邻，这个时候，红黑树的定义就被破坏了。那我们应该如何调整呢？
 
-![img](https://static001.geekbang.org/resource/image/d9/c9/d9d1ce7d6bf3da4888f39f9d15be99c9.jpg)
+![](./images/SJJG+SFZM-26-12.jpg)
 
 你会发现，这个时候，我们前面讲的插入时，三种情况下的平衡调整规则，没有一种是适用的。但是，如果我们把黑色的空节点都给它加上，变成下面这样，你会发现，它满足 CASE 2 了。
 
-![img](https://static001.geekbang.org/resource/image/8b/9a/8b1fb8c8004d86f737d829ecbd3a599a.jpg)
+![](./images/SJJG+SFZM-26-13.jpg)
 
 你可能会说，你可以调整一下平衡调整规则啊。比如把 CASE 2 改为“如果关注节点 a 的叔叔节点 b 是黑色或者不存在，a 是父节点的右子节点，就进行某某操作”。当然可以，但是这样的话规则就没有原来简洁了。
 
 你可能还会说，这样给红黑树添加黑色的空的叶子节点，会不会比较浪费存储空间呢？答案是不会的。虽然我们在讲解或者画图的时候，每个黑色的、空的叶子节点都是独立画出来的。实际上，在具体实现的时候，我们只需要像下面这样，共用一个黑色的、空的叶子节点就行了。
 
-![img](https://static001.geekbang.org/resource/image/d6/66/d63231acb0e9d54c3469055d8dbdb366.jpg)
+![](./images/SJJG+SFZM-26-14.jpg)
 
 ### 内容小结
 

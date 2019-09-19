@@ -40,7 +40,7 @@ public class Graph { // 无向图
 
 广度优先搜索（Breadth-First-Search），我们平常都把简称为 BFS。直观地讲，它其实就是一种“地毯式”层层推进的搜索策略，即先查找离起始顶点最近的，然后是次近的，依次往外搜索。理解起来并不难，所以我画了一张示意图，你可以看下。
 
-![img](https://static001.geekbang.org/resource/image/00/ea/002e9e54fb0d4dbf5462226d946fa1ea.jpg)
+![](./images/SJJG+SFZM-31-01.jpg)
 
 尽管广度优先搜索的原理挺简单，但代码实现还是稍微有点复杂度。所以，我们重点讲一下它的代码实现。
 
@@ -92,7 +92,7 @@ private void print(int[] prev, int s, int t) { // 递归打印 s->t 的路径
 
 为了方便你理解，我画了一个广度优先搜索的分解图，你可以结合着代码以及我的讲解一块儿看。
 
-![](/Users/andyron/Library/Application Support/typora-user-images/image-20190731195046961.png)
+![](./images/SJJG+SFZM-31-02.jpg)
 
 
 
@@ -114,7 +114,7 @@ private void print(int[] prev, int s, int t) { // 递归打印 s->t 的路径
 
 我用深度递归算法，把整个搜索的路径标记出来了。这里面实线箭头表示遍历，虚线箭头表示回退。从图中我们可以看出，深度优先搜索找出来的路径，并不是顶点 s 到顶点 t 的最短路径。
 
-![](https://static001.geekbang.org/resource/image/87/85/8778201ce6ff7037c0b3f26b83efba85.jpg)
+![](./images/SJJG+SFZM-31-03.jpg)
 
 实际上，深度优先搜索用的是一种比较著名的算法思想，回溯思想。这种思想解决问题的过程，非常适合用递归来实现。回溯思想我们后面会有专门的一节来讲，我们现在还回到深度优先搜索算法上。
 

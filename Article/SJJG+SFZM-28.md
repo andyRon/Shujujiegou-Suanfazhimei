@@ -24,7 +24,7 @@
 
 定义解释清楚了，你来看看，下面这几个二叉树是不是堆？ 
 
-![](https://static001.geekbang.org/resource/image/4c/99/4c452a1ad3b2d152daa2727d06097099.jpg)
+![](./images/SJJG+SFZM-28-01.jpg)
 
 其中第1个和第2个是大顶堆，第3个是小顶堆，第4个不是堆。除此之外，从图中还可以看出来，对于同一组数据，我们可以构建多种不同形态的堆。 
 
@@ -36,7 +36,7 @@
 
 我画了一个用数组存储堆的例子，你可以先看下。 
 
-![](https://static001.geekbang.org/resource/image/4d/1e/4d349f57947df6590a2dd1364c3b0b1e.jpg)
+![](./images/SJJG+SFZM-28-02.jpg)
 
 从图中我们可以看到，数组中下标为i的节点的左子节点，就是下标为 i∗2的节点，右子节点就是下标为 i∗2+1的节点，父节点就是下标为 i/2 的节点。
 
@@ -50,13 +50,13 @@
 
 堆化实际上有两种，从下往上和从上往下。这里我先讲**从下往上**的堆化方法。
 
-![](https://static001.geekbang.org/resource/image/e5/22/e578654f930002a140ebcf72b11eb722.jpg)
+![](./images/SJJG+SFZM-28-03.jpg)
 
 堆化非常简单，就是顺着节点所在的路径，向上或者向下，对比，然后交换。
 
 我这里画了一张堆化的过程分解图。我们可以让新插入的节点与父节点对比大小。如果不满足子节点小于等于父节点的大小关系，我们就互换两个节点。一直重复这个过程，直到父子节点之间满足刚说的那种大小关系。
 
-![img](https://static001.geekbang.org/resource/image/e3/0e/e3744661e038e4ae570316bc862b2c0e.jpg)
+![](./images/SJJG+SFZM-28-04.jpg)
 
 我将上面讲的往堆中插入数据的过程，翻译成了代码，你可以结合着一块看。
 
@@ -93,13 +93,13 @@ public class Heap {
 
 这里我也画了一个分解图。不过这种方法有点问题，就是最后堆化出来的堆并不满足完全二叉树的特性。
 
-![](https://static001.geekbang.org/resource/image/59/81/5916121b08da6fc0636edf1fc24b5a81.jpg)
+![](./images/SJJG+SFZM-28-05.jpg)
 
 实际上，我们稍微改变一下思路，就可以解决这个问题。你看我画的下面这幅图。我们把最后一个节点放到堆顶，然后利用同样的父子节点对比方法。对于不满足父子节点大小关系的，互换两个节点，并且重复进行这个过程，直到父子节点之间满足大小关系为止。这就是**从上往下的堆化方法**。
 
 因为我们移除的是数组中的最后一个元素，而在堆化的过程中，都是交换操作，不会出现数组中的“空洞”，所以这种方法堆化之后的结果，肯定满足完全二叉树的特性。
 
-![img](https://static001.geekbang.org/resource/image/11/60/110d6f442e718f86d2a1d16095513260.jpg)
+![](./images/SJJG+SFZM-28-06.jpg)
 
 我把上面的删除过程同样也翻译成了代码，贴在这里，你可以结合着看。
 
@@ -143,7 +143,7 @@ private void heapify(int[] a, int n, int i) { // 自上往下堆化
 
 我举了一个例子，并且画了一个第二种实现思路的建堆分解步骤图，你可以看下。因为叶子节点往下堆化只能自己跟自己比较，所以我们直接从第一个非叶子节点开始，依次堆化就行了。
 
-![](https://static001.geekbang.org/resource/image/aa/9d/aabb8d15b1b92d5e040895589c60419d.jpg)
+![](./images/SJJG+SFZM-28-07.jpg)
 
 对于程序员来说，看代码可能更好理解一些，所以，我将第二种实现思路翻译成了代码，你可以看下。
 
@@ -176,19 +176,19 @@ private static void heapify(int[] a, int n, int i) {
 
 我把每一层的节点个数和对应的高度画了出来，你可以看看。我们只需要将每个节点的高度求和，得出的就是建堆的时间复杂度。
 
-![img](https://static001.geekbang.org/resource/image/89/d5/899b9f1b40302c9bd5a7f77f042542d5.jpg)
+![](./images/SJJG+SFZM-28-08.jpg)
 
 我们将每个非叶子节点的高度求和，就是下面这个公式：
 
-![](https://static001.geekbang.org/resource/image/f7/09/f712f8a7baade44c39edde839cefcc09.jpg)
+![](./images/SJJG+SFZM-28-09.jpg)
 
 这个公式的求解稍微有点技巧，不过我们高中应该都学过：把公式左右都乘以2，就得到另一个公式 S2。我们将 S2错位对齐，并且用 S2减去 S1，可以得到 S。
 
-![img](https://static001.geekbang.org/resource/image/62/df/629328315decd96e349d8cb3940636df.jpg)
+![](./images/SJJG+SFZM-28-10.jpg)
 
 S的中间部分是一个等比数列，所以最后可以用等比数列的求和公式来计算，最终的结果就是下面图中画的这个样子。
 
-![img](https://static001.geekbang.org/resource/image/46/36/46ca25edc69b556b967d2c62388b7436.jpg)
+![](./images/SJJG+SFZM-28-11.jpg)
 
 因为 h=log<sub>2</sub>n，代入公式 S，就能得到 S=O(n)，所以，建堆的时间复杂度就是 O(n)。
 
@@ -200,7 +200,7 @@ S的中间部分是一个等比数列，所以最后可以用等比数列的求�
 n
  的元素放到堆顶，然后再通过堆化的方法，将剩下的 n−1个元素重新构建成堆。堆化完成之后，我们再取堆顶的元素，放到下标是 n−1的位置，一直重复这个过程，直到最后堆中只剩下标为 1的一个元素，排序工作就完成了。
 
-![img](https://static001.geekbang.org/resource/image/23/d1/23958f889ca48dbb8373f521708408d1.jpg)
+![](./images/SJJG+SFZM-28-12.jpg)
 
 堆排序的过程，我也翻译成了代码。结合着代码看，你理解起来应该会更加容易。
 
@@ -237,7 +237,7 @@ public static void sort(int[] a, int n) {
 
 对于快速排序来说，数据是顺序访问的。而对于堆排序来说，数据是跳着访问的。 比如，堆排序中，最重要的一个操作就是数据的堆化。比如下面这个例子，对堆顶节点进行堆化，会依次访问数组下标是 1，2，4，8的元素，而不是像快速排序那样，局部顺序访问，所以，这样对 CPU 缓存是不友好的。
 
-![img](https://static001.geekbang.org/resource/image/83/ce/838a38286dcace89ca63895b77ae8ece.jpg)
+![](./images/SJJG+SFZM-28-13.jpg)
 
 #### 第二点，对于同样的数据，在排序过程中，堆排序算法的数据交换次数要多于快速排序。
 
@@ -245,7 +245,7 @@ public static void sort(int[] a, int n) {
 
 但是堆排序的第一步是建堆，建堆的过程会打乱数据原有的相对先后顺序，导致原数据的有序度降低。比如，对于一组已经有序的数据来说，经过建堆之后，数据反而变得更无序了。
 
-![](https://static001.geekbang.org/resource/image/6e/bd/6e81fdde42ec3fd288d32eb866867fbd.jpg)
+![](./images/SJJG+SFZM-28-14.jpg)
 
 对于第二点，你可以自己做个试验看下。我们用一个记录交换次数的变量，在代码中，每次交换的时候，我们就对这个变量加一，排序完成之后，这个变量的值就是总的数据交换次数。这样你就能很直观地理解我刚刚说的，堆排序比快速排序交换次数多。
 
